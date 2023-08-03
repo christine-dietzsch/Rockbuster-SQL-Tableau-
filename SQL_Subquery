@@ -1,0 +1,27 @@
+-- this code delivers  average rentals for movies within the same rating category.
+SELECT
+    movie_rating,
+    count_rentals,
+    (
+        SELECT ROUND(AVG(rental_rate), 2)
+        FROM payment A
+        INNER JOIN rental B ON A.rental_id = B.rental_id
+        INNER JOIN inventory C ON B.inventory_id = C.inventory_id
+        INNER JOIN film D ON C.film_id = D.film_id
+        INNER JOIN film_category E ON D.film_id = E.film_id
+        INNER JOIN category F ON E.category_id = F.category_id
+        WHERE D.rating = movie_rating
+    ) AS avg_rental_rate
+FROM (
+    SELECT
+        D.rating AS movie_rating,
+        COUNT(B.rental_id) AS count_rentals
+    FROM payment A
+    INNER JOIN rental B ON A.rental_id = B.rental_id
+    INNER JOIN inventory C ON B.inventory_id = C.inventory_id
+    INNER JOIN film D ON C.film_id = D.film_id
+    INNER JOIN film_category E ON D.film_id = E.film_id
+    INNER JOIN category F ON E.category_id = F.category_id
+    GROUP BY rating
+    ORDER BY rating
+) SubqueryResults;
