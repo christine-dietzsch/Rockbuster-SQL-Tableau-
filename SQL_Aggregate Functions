@@ -1,0 +1,17 @@
+-- this code delivers several aggregate statistics for analysis
+SELECT
+min(rental_duration) AS minimal_rental_duration,
+min(rental_rate) AS minimal_rental_rate,
+min(length) AS minimal_film_length,
+min(replacement_cost) AS minimal_replacement_cost,
+min(last_update) as minimal_last_update,
+max(rental_duration) AS maxiumum_rental_duration,
+max(rental_rate) AS maxiumum_rental_rate,
+max(length) AS maxiumum_film_length,
+max(replacement_cost) AS maxiumum_replacement_cost,
+max(last_update) as maxiumum_last_update,
+avg(rental_duration) AS average_rental_duration,
+avg(rental_rate) AS average_rental_rate,
+avg(length) AS average_film_length,
+avg(replacement_cost) AS average_replacement_cost
+FROM film
