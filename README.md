@@ -13,5 +13,5 @@ PostgreSQL Software: pgAdmin, DbVisualizer, Excel, Tableau
 **Joining tables:** Integrate data from multiple tables for comprehensive analysis.  
 **Common Table Expressions (CTEs) and subqueries:** Optimize code readability and reusability.  
 **Query Optimization** with EXPLAIN: Enhance query performance and efficiency.  
-**Presenting insights and recommendations:** a Powerpoint presentation with data-driven answers and actionable recommendations effectively.
+**Presenting insights and recommendations:** a Powerpoint presentation with data-driven answers and actionable recommendations effectively.  
 **Visualization in Tableau**: In addition visualisation in PPT, visuals can be found in Tableau as well.
